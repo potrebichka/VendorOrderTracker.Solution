@@ -21,35 +21,69 @@ namespace VendorOrderTracker.Tests
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
 
-    // [TestMethod]
-    // public void GetDescription_ReturnsDescription_String()
-    // {
-    //   //Arrange
-    //   string description = "Walk the dog.";
+    [TestMethod]
+    public void GetName_ReturnsName_String()
+    {
+      //Arrange
+      string name = "Suzie's Cafe";
+      string description = "Some description";
 
-    //   //Act
-    //   Item newItem = new Item(description);
-    //   string result = newItem.Description;
+      //Act
+      Vendor newVendor = new Vendor(name, description);
+      string result = newVendor.Name;
 
-    //   //Assert
-    //   Assert.AreEqual(description, result);
-    // }
+      //Assert
+      Assert.AreEqual(name, result);
+    }
 
-    // [TestMethod]
-    // public void SetDescription_SetDescription_String()
-    // {
-    //   //Arrange
-    //   string description = "Walk the dog.";
-    //   Item newItem = new Item(description);
+    [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    {
+      //Arrange
+      string name = "Suzie's Cafe";
+      string description = "Some description";
 
-    //   //Act
-    //   string updatedDescription = "Do the dishes";
-    //   newItem.Description = updatedDescription;
-    //   string result = newItem.Description;
+      //Act
+      Vendor newVendor = new Vendor(name, description);
+      string result = newVendor.Description;
 
-    //   //Assert
-    //   Assert.AreEqual(updatedDescription, result);
-    // }
+      //Assert
+      Assert.AreEqual(description, result);
+    }
+
+    [TestMethod]
+    public void SetName_SetName_String()
+    {
+      //Arrange
+      string name = "Suzie's Cafe";
+      string description = "Some description";
+      Vendor newVendor = new Vendor(name, description);
+
+      //Act
+      string updatedName = "Suzie's Restaraunt";
+      newVendor.Name = updatedName;
+      string result = newVendor.Name;
+
+      //Assert
+      Assert.AreEqual(updatedName, result);
+    }
+
+    [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      //Arrange
+      string name = "Suzie's Cafe";
+      string description = "Some description";
+      Vendor newVendor = new Vendor(name, description);
+
+      //Act
+      string updatedDescription = "Add another description";
+      newVendor.Description = updatedDescription;
+      string result = newVendor.Description;
+
+      //Assert
+      Assert.AreEqual(updatedDescription, result);
+    }
 
     // [TestMethod]
     // public void GetAll_ReturnsEmptyList_ItemList()
