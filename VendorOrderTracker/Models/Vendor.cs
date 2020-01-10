@@ -16,6 +16,7 @@ namespace VendorOrderTracker.Models
             Name = name;
             Description = description;
             Id = _currentId;
+            Orders =  new List<Order> {};
             _currentId++;
             _Vendors.Add(this);
         }        
