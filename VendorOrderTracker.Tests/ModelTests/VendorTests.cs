@@ -231,5 +231,32 @@ namespace VendorOrderTracker.Tests
 
         CollectionAssert.AreEqual(orders, result);
     }
+    [TestMethod]
+    public void Find_FindsOrderById_Order()
+    {
+        Vendor.ClearAll();
+        Order.Clear();
+        string name = "Suzie's cafe";
+        string description = "Description";
+        Vendor newVendor = new Vendor(name, description);
+
+        string title01 = "Order 1";
+        string orderDescription01 = "Description of order 1";
+        double price01 = 23.50;
+        DateTime date01 = new DateTime(2020,01,10);
+        Order order01 = new Order(title01, orderDescription01, price01, date01);
+        newVendor.AddOrder(order01);
+        string title02 = "Order 2";
+        string orderDescription02 = "Description of order 2";
+        double price02 = 13.50;
+        DateTime date02 = new DateTime(2020,02,20);
+        Order order02 = new Order(title02, orderDescription02, price02, date02);
+        newVendor.AddOrder(order02);
+
+        Order result = newVendor.FindOrder(1);
+        Order selectedOrder = order02;
+
+        Assert.AreEqual(selectedOrder, result);
+    }
   }
 }

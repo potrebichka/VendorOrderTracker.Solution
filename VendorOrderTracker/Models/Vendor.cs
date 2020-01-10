@@ -60,6 +60,18 @@ namespace VendorOrderTracker.Models
             return Orders;
         }
 
+        public Order FindOrder(int id)
+        {
+            for (int i = 0; i < Orders.Count; i++)
+            {
+                if (Orders[i].Id == id)
+                {
+                    return Orders[i];
+                }
+            }
+            return null;
+        }
+
         public void DeleteOrder(int id)
         {
             for (int i = Orders.Count-1; i >= 0; i--)
