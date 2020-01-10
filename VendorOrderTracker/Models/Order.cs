@@ -18,6 +18,7 @@ namespace VendorOrderTracker.Models
             Date = date;
             Id = _currentId;
             _currentId+=1;
+            Orders.Add(Order);
         }
         public static void Clear()
         {
