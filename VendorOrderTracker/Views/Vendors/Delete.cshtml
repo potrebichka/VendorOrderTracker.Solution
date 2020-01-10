@@ -1,0 +1,14 @@
+@{
+    Layout = "_Layout";
+}
+
+<h1>Delete vendors</h1>
+
+<form action="/vendors/" method="post">
+  <label for="deleteVendors">Do you want to delete all vendors ?</label>
+  <input type="checkbox" name="deleteVendors" id="deleteVendors" value="true">
+  <button type="submit">Delete</button>
+</form>
+
+<p><a href="/vendors">Back to vendors.</a></p>
+<p><a href="/">Back home</a></p>

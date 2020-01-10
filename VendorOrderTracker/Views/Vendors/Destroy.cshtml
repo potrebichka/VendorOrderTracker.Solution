@@ -1,0 +1,15 @@
+@{
+    Layout = "_Layout";
+}
+
+<h1>Delete vendor</h1>
+
+<form action="/vendors/@Model.Id" method="post">
+  <label for="deleteVendor">Do you want to delete @Model.Name ?</label>
+  <input type="checkbox" name="deleteVendor" id="deleteVendor" value="true">
+  <button type="submit">Delete</button>
+</form>
+
+<p><a href="/vendors/@Model.Id">Back to vendor</a></p>
+<p><a href="/vendors">Back to vendors.</a></p>
+<p><a href="/">Back home</a></p>
