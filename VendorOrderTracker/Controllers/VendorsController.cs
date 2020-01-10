@@ -27,16 +27,16 @@ namespace VendorOrderTracker.Controllers
       return RedirectToAction("Index");
     }
 
-    // [HttpGet("/categories/{id}")]
-    // public ActionResult Show(int id)
-    // {
-    //   Dictionary<string, object> model = new Dictionary<string, object>();
-    //   Category selectedCategory = Category.Find(id);
-    //   List<Item> categoryItems = selectedCategory.Items;
-    //   model.Add("category", selectedCategory);
-    //   model.Add("items", categoryItems);
-    //   return View(model);
-    // }
+    [HttpGet("/vendors/{id}")]
+    public ActionResult Show(int id)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor selectedVendor = Vendor.Find(id);
+      List<Order> VendorOrders = selectedVendor.Orders;
+      model.Add("vendor", selectedVendor);
+      model.Add("orders", VendorOrders);
+      return View(model);
+    }
 
     // // This one creates new Items within a given Category, not new Categories:
     // [HttpPost("/categories/{categoryId}/items")]
