@@ -17,11 +17,58 @@ namespace VendorOrderTracker.Models
             Description = description;
             Id = _currentId;
             _currentId++;
+            _Vendors.Add(this);
         }        
         public static void ClearAll()
         {
             _Vendors.Clear();
+            _currentId = 0;
         }
-        
+        public static List<Vendor> GetAll()
+        {
+            return _Vendors;
+        }
+        public static Vendor Find(int id)
+        {
+            for (int i =0; i < _Vendors.Count; i++)
+            {
+                if (_Vendors[i].Id == id)
+                {
+                    return _Vendors[i];
+                }
+            }
+            return null;
+        }
+        public static void Delete(int id)
+        {
+            for (int i =_Vendors.Count-1; i >= 0; i--)
+            {
+                if (_Vendors[i].Id == id)
+                {
+                    _Vendors.RemoveAt(i);
+                    break;
+                }
+            }
+        }
+        public void AddOrder(Order order)
+        {
+            Orders.Add(order);
+        }
+        public List<Order> GetOrderList()
+        {
+            return Orders;
+        }
+
+        public void DeleteOrder(int id)
+        {
+            for (int i = Orders.Count-1; i >= 0; i--)
+            {
+                if (Orders[i].Id == id)
+                {
+                    Orders.RemoveAt(i);
+                    break;
+                }
+            }
+        }
     }
 }
