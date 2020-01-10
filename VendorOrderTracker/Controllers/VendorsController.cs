@@ -90,7 +90,6 @@ namespace VendorOrderTracker.Controllers
         return RedirectToAction("Show", id);
     }
 
-    
     [HttpGet("/vendors/{id}/delete")]
     public ActionResult Destroy(int id)
     {

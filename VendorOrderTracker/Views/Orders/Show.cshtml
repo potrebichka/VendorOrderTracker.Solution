@@ -2,11 +2,20 @@
 @{
     Layout = "_Layout";
 }
-<h3>Title of Order: @Model["order"].Title</h3>
-<h3>Description of Order: @Model["order"].Description</h3>
-<h3>Price of this order: @Model["order"].Price</h3>
-<h3>Date of this order: @Model["order"].Date</h3>
+@if (@Model["order"] == null)
+{
+    <h3>The order has been deleted</h3>
+}
+else 
+{
+    <h3>Title of Order: @Model["order"].Title</h3>
+    <h3>Description of Order: @Model["order"].Description</h3>
+    <h3>Price of this order: @Model["order"].Price</h3>
+    <h3>Date of this order: @Model["order"].Date</h3>
 
+    <p><a href='/vendors/@Model["vendor"].Id/orders/@Model["order"].Id/edit'>Edit order.</a></p>
+    <p><a href='/vendors/@Model["vendor"].Id/orders/@Model["order"].Id/delete'>Delete order.</a></p>
+}
 
 <p><a href='/vendors/@Model["vendor"].Id/orders'>Back to orders.</a></p>
 <p><a href='/vendors/@Model["vendor"].Id'>Back to vendor.</a></p>

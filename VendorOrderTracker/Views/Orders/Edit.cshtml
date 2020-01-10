@@ -1,0 +1,23 @@
+@{
+    Layout = "_Layout";
+}
+
+<h1>Edit order</h1>
+
+<form action='/vendors/@Model["vendor"].Id/orders/@Model["order"].Id' method="post">
+    <label for="updatedOrderTitle">Order title</label>
+    <input id="updatedOrderTitle" name="updatedOrderTitle" type="text" value='@Model["order"].Title'>
+    <label for="updatedOrderDescription">Order description</label>
+    <textarea id="updatedOrderDescription" name="updatedOrderDescription" type="text">@Model["order"].Description</textarea>
+    <label for="updatedOrderPrice">Order price</label>
+    <input id="updatedOrderPrice" name="updatedOrderPrice" type="number" value='@Model["order"].Price'>
+    <label for="updatedOrderDate">Order date</label>
+    <input id="updatedOrderDate" name="updatedOrderDate" type="date" value='@Model["order"].Date'>
+    <button type="submit">Add</button>
+</form>
+
+<p><a href='/vendors/@Model["vendor"].Id/orders/@Model["order"].Id'>Back to order.</a></p>
+<p><a href='/vendors/@Model["vendor"].Id/orders'>Back to orders.</a></p>
+<p><a href='/vendors/@Model["vendor"].Id'>Back to vendor</a></p>
+<p><a href="/vendors">Back to vendors.</a></p>
+<p><a href="/">Back home</a></p>

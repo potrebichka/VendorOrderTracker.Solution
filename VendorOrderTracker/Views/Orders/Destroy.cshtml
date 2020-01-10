@@ -1,0 +1,17 @@
+@{
+    Layout = "_Layout";
+}
+
+<h1>Delete order</h1>
+
+<form action='/vendors/@Model["vendor"].Id/orders/@Model["order"].Id' method="post">
+  <label for="deleteOrder">Do you want to delete order @Model["order"].Title ?</label>
+  <input type="checkbox" name="deleteOrder" id="deleteOrder" value="true">
+  <button type="submit">Delete</button>
+</form>
+
+<p><a href='/vendors/@Model["vendor"].Id/orders/@Model["order"].Id'>Back to order</a></p>
+<p><a href='/vendors/@Model["vendor"].Id/orders/'>Back to orders</a></p>
+<p><a href='/vendors/@Model["vendor"].Id'>Back to vendor</a></p>
+<p><a href="/vendors">Back to vendors.</a></p>
+<p><a href="/">Back home</a></p>

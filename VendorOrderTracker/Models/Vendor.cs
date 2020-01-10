@@ -83,5 +83,10 @@ namespace VendorOrderTracker.Models
                 }
             }
         }
+
+        public void DeleteAllOrders()
+        {
+            Orders.Clear();
+        }
     }
 }

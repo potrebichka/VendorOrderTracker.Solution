@@ -3,15 +3,28 @@
     Layout = "_Layout";
 }
 
-<h3>Here are all the orders of vendor @Model["vendor"].Name:</h3>
-
-@foreach (Order order in @Model["orders"])
+@if(Model["orders"] == null)
 {
-    <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</li>
+    <h3>Orders have been deleted!</h3>
 }
-</ol>
+else if(Model["orders"].Count == 0)
+{
+    <h3>No orders have been added yet!</h3>
+}
+else
+{
+    <h3>Here are all the orders of vendor @Model["vendor"].Name:</h3>
+    <ol>
+    @foreach (Order order in @Model["orders"])
+    {
+        <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</li>
+    }
+    </ol>
+}
+
 
 <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
+<p><a href='/vendors/@Model["vendor"].Id/orders/delete'>Delete all orders</a></p>
 <p><a href='/vendors/@Model["vendor"].Id/'>Return to vendor page</a></p>
 <p><a href='/vendors'>Return to vendor list</a></p>
 <p><a href='/'>Return to Main Page</a></p>
