@@ -1,0 +1,17 @@
+@{
+    Layout = "_Layout";
+}
+
+<h1>Edit a vendor</h1>
+
+<form action="/vendors/@Model.Id" method="post">
+  <label for="updatedVendorName">Vendor name</label>
+  <input id="updatedVendorName" name="updatedVendorName" type="text" value=@Model.Name>
+  <label for="updatedVendorDescription">Vendor description</label>
+  <textarea id="updatedVendorDescription" name="updatedVendorDescription" type="text">@Model.Description</textarea>
+  <button type="submit">Edit</button>
+</form>
+
+<p><a href="/vendors/@Model.Id">Back to vendor</a></p>
+<p><a href="/vendors">Back to vendors.</a></p>
+<p><a href="/">Back home</a></p>
