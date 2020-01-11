@@ -39,6 +39,7 @@ h3 {
 h2 {
   color: #D3B1C2;
   font-size: 40px;
+  text-decoration: underline;
 }
 
 label {

@@ -7,13 +7,13 @@
 
   <form action="/vendors/@Model.Id" method="post">
     <label for="updatedVendorName">Vendor name</label>
-    <input id="updatedVendorName" name="updatedVendorName" type="text" value=@Model.Name>
+    <input class="form-control" id="updatedVendorName" name="updatedVendorName" type="text" value=@Model.Name>
     <label for="updatedVendorDescription">Vendor description</label>
-    <textarea id="updatedVendorDescription" name="updatedVendorDescription" type="text">@Model.Description</textarea>
-    <button type="submit">Edit</button>
+    <textarea class="form-control" id="updatedVendorDescription" name="updatedVendorDescription" type="text">@Model.Description</textarea>
+    <button class="btn" type="submit">Edit</button>
   </form>
 
-  <p><a href="/vendors/@Model.Id">Back to vendor</a></p>
-  <p><a href="/vendors">Back to vendors.</a></p>
-  <p><a href="/">Back home</a></p>
+  <button type="button" class="btn" onclick="window.location.href = '/vendors/@Model.Id'">Back to vendor</button>
+  <button type="button" class="btn" onclick="window.location.href = '/vendors'">Back to vendors</button>
+  <button type="button" class="btn" onclick="window.location.href = '/'">Home</button>
 </div>

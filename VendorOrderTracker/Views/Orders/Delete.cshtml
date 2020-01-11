@@ -2,15 +2,20 @@
     Layout = "_Layout";
 }
 
-<h1>Delete orders</h1>
+<div class="box2">
+  <h2>Delete orders</h2>
+  <h3>Do you want to delete all orders of vendor @Model.Name?</h3>
+  <form action="/vendors/@Model.Id/orders/" method="post">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="deleteOrders" id="deleteOrders" value="true">
+      <label for="deleteOrders">Yes/No</label> 
+    </div>
+    
+    <button class="btn" type="submit">Delete / Back</button>
+  </form>
 
-<form action="/vendors/@Model.Id/orders/" method="post">
-  <label for="deleteOrders">Do you want to delete all orders of vendor @Model.Name?</label>
-  <input type="checkbox" name="deleteOrders" id="deleteOrders" value="true">
-  <button type="submit">Delete</button>
-</form>
-
-<p><a href='/vendors/@Model.Id/orders'>Back to orders.</a></p>
-<p><a href='/vendors/@Model.Id'>Back to vendor.</a></p>
-<p><a href="/vendors">Back to vendors.</a></p>
-<p><a href="/">Back home</a></p>
+  <button type="button" class="btn" onclick="window.location.href = '/vendors/@Model.Id/orders'">Back to orders</button>
+  <button type="button" class="btn" onclick="window.location.href = '/vendors/@Model.Id'">Back to vendor</button>
+  <button type="button" class="btn" onclick="window.location.href = '/vendors'">Back to vendors</button>
+  <button type="button" class="btn" onclick="window.location.href = '/'">Home</button>
+</div>

@@ -2,14 +2,20 @@
     Layout = "_Layout";
 }
 
-<h1>Delete vendor</h1>
+<div class="box2">
+  <h2>Delete Vendor</h2>
+  <h3>Do you want to delete @Model.Name ?</h3>
+  <form action="/vendors/@Model.Id" method="post">
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" name="deleteVendor" id="deleteVendor" value="true">
+    <label class="form-check-label" for="deleteVendor">Yes/No</label>
+  </div>
 
-<form action="/vendors/@Model.Id" method="post">
-  <label for="deleteVendor">Do you want to delete @Model.Name ?</label>
-  <input type="checkbox" name="deleteVendor" id="deleteVendor" value="true">
-  <button type="submit">Delete</button>
-</form>
+    <button type="submit" class="btn">Delete / Back</button>
+  </form>
 
-<p><a href="/vendors/@Model.Id">Back to vendor</a></p>
-<p><a href="/vendors">Back to vendors.</a></p>
-<p><a href="/">Back home</a></p>
+  <button type="button" class="btn" onclick="window.location.href = '/vendors/@Model.Id'">Back to vendor</button>
+  <button type="button" class="btn" onclick="window.location.href = '/vendors'">Back to vendors</button>
+  <button type="button" class="btn" onclick="window.location.href = '/'">Home</button>
+</div>
+

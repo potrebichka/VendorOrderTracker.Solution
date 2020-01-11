@@ -2,13 +2,17 @@
     Layout = "_Layout";
 }
 
-<h1>Delete vendors</h1>
+<div class="box2">
+  <h2>Delete vendors</h2>
+  <h3>Do you want to delete all vendors ?</h3>
+  <form action="/vendors/" method="post">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="deleteVendors" id="deleteVendors" value="true">
+      <label for="deleteVendors">Yes/No</label>
+    </div>
+    <button type="submit" class="btn">Delete/Back</button>
+  </form>
 
-<form action="/vendors/" method="post">
-  <label for="deleteVendors">Do you want to delete all vendors ?</label>
-  <input type="checkbox" name="deleteVendors" id="deleteVendors" value="true">
-  <button type="submit">Delete</button>
-</form>
-
-<p><a href="/vendors">Back to vendors.</a></p>
-<p><a href="/">Back home</a></p>
+  <button type="button" class="btn" onclick="window.location.href = '/vendors'">Back to vendors</button>
+  <button type="button" class="btn" onclick="window.location.href = '/'">Home</button>
+</div>
