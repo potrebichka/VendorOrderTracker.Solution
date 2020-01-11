@@ -1,9 +1,52 @@
-div#footer {
-    position:fixed;
-    bottom:0px;
-    left:0px;
-    width:100%;
-    color:#CCC;
-    background:#333;
-    padding:8px;
+body {
+  text-align: center;
+  background-color: #C197D2;
+}
+
+h1 {
+  color: #211522;
+  font-size: 50px;
+}
+
+.box {
+  background-color: #613659;
+  width: 60%;
+  padding: 20px;
+  position: relative;
+  margin: 15% auto;
+}
+
+.btn {
+  background-color:  #211522;
+  color: #C197D2;
+  font-size: 25px;
+  margin: 20px;
+}
+
+h3 {
+  color: #D3B1C2;
+  font-size: 30px;
+}
+
+.box2 {
+  background-color: #613659;
+  width: 60%;
+  padding: 20px;
+  position: relative;
+  margin: 20px auto;
+}
+
+h2 {
+  color: #D3B1C2;
+  font-size: 40px;
+}
+
+label {
+  color: #D3B1C2;
+  font-size: 25px;
+  margin: 10px;
+}
+
+.box3 {
+  text-align: left;
 }

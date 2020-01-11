@@ -25,8 +25,9 @@ namespace VendorOrderTracker
 
     public void Configure(IApplicationBuilder app)
     {
-      app.UseDeveloperExceptionPage();
       app.UseStaticFiles();
+
+      app.UseDeveloperExceptionPage();
 
       app.UseMvc(routes =>
       {
@@ -35,10 +36,11 @@ namespace VendorOrderTracker
           template: "{controller=Home}/{action=Index}/{id?}");
       });
 
-        app.Run(async (context) =>
-        {
-          await context.Response.WriteAsync("Something went wrong!");
-        });
+      app.Run(async (context) =>
+      {
+        await context.Response.WriteAsync("Something went wrong!");
+      });
+
     }
   }
 }

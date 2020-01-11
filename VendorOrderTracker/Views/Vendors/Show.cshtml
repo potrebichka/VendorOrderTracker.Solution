@@ -3,20 +3,24 @@
     Layout = "_Layout";
 }
 
-@if (Model["vendor"] == null)
-{
-    <h3>The vendor was deleted</h3>
-}
-else
-{
-    <h3>Title of Vendor: @Model["vendor"].Name</h3>
-    <h3>Description of Vendor: @Model["vendor"].Description</h3>
+<div class="box2">
+    @if (Model["vendor"] == null)
+    {
+        <h3>The vendor was deleted</h3>
+    }
+    else
+    {
+        <div class="box3">
+            <h3>Vendor: @Model["vendor"].Name</h3>
+            <h3>Description of Vendor: @Model["vendor"].Description</h3>
 
-    <h3><a href='/vendors/@Model["vendor"].Id/orders'>Orders of this vendor</a> </h3>
+            <h3><a href='/vendors/@Model["vendor"].Id/orders'>Orders of this vendor</a> </h3>
+        </div>
 
-    <p><a href='/vendors/@Model["vendor"].Id/edit'>Edit vendor info</a></p>
-    <p><a href='/vendors/@Model["vendor"].Id/delete'>Delete vendor</a></p>
-}
+        <button type="button" class="btn" onclick="window.location.href = '/vendors/@Model["vendor"].Id/edit'">Edit vendor info</button>
+        <button type="button" class="btn" onclick="window.location.href = '/vendors/@Model["vendor"].Id/delete'">Delete vendor</button>
+    }
 
-<p><a href='/vendors'>Return to vendor list</a></p>
-<p><a href='/'>Return to Main Page</a></p>
+    <button type="button" class="btn" onclick="window.location.href = '/vendors'">Return to vendor list</button>
+    <button type="button" class="btn" onclick="window.location.href = '/'">Home</button>
+</div>

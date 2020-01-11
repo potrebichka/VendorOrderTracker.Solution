@@ -2,16 +2,17 @@
     Layout = "_Layout";
 }
 
-<h1>Add a vendor</h1>
-<p>Add a vendor here:</p>
+<div class="box2">
+  <h2>Add a vendor</h2>
 
-<form action="/vendors" method="post">
-  <label for="vendorName">Vendor name</label>
-  <input id="vendorName" name="vendorName" type="text" placeholder="Vendor name...">
-  <label for="vendorDescription">Vendor description</label>
-  <textarea id="vendorDescription" name="vendorDescription" type="text" placeholder="Vendor description..."></textarea>
-  <button type="submit">Add</button>
-</form>
+  <form action="/vendors" method="post">
+    <label for="vendorName">Vendor name</label>
+    <input id="vendorName" class="form-control" name="vendorName" type="text" placeholder="Vendor name...">
+    <label for="vendorDescription">Vendor description</label>
+    <textarea id="vendorDescription" class="form-control"name="vendorDescription" type="text" placeholder="Vendor description..."></textarea>
+    <button type="submit" class="btn">Add vendor</button>
+  </form>
 
-<p><a href="/">Back home</a></p>
-<p><a href="/vendors">Back to vendors.</a></p>
+  <button type="button" class="btn" onclick="window.location.href = '/vendors'">Back to vendors</button>
+  <button type="button" class="btn" onclick="window.location.href = '/'">Home</button>
+</div>
